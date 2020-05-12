@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" type="text/css"  th:html ="@{/css/util.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
+	<link rel="stylesheet" th:href="@{/font-awesome.min.css}"  />
+	<link rel="stylesheet" th:href="@{/css/flaticon.css}"  />
+	<link rel="stylesheet" th:href="@{/css/owl.carousel.css}"  />
+	<link rel="stylesheet" th:href="@{/css/style.css}"  />
+	<link rel="stylesheet" th:href="@{/css/animate.css}"  />
+    <title>Contract List</title>
+</head>
+<body>
+
+<!-- Page info section -->
+	<section class="page-info-section set-bg" data-setbg="img/page-info-bg/2.jpg">
+		<div class="container">
+			<h2>Contract List</h2>
+		</div>
+	</section>
+	
+	
+	<table>
+							<theader>
+								<tr >
+									<th >ID</th>
+									<th >CONTRACT NUMBER</th>
+									<th >REFERENCE</th>	
+								</tr>
+							</theader>
+						
+
+
+
+						
+							<tbody>
+								<tr :block th:each="c : ${contrats}" >
+									<td  th:text="${c.id}" ></td>
+									<td  th:text="${c.ref}"></td>
+									<td  th:text="${c.numcontrat}" ></td>
+									<th ><a th:href="@{/deleteContract(id=${c.id})}" onclick="return myConfirm();" > Delete </a> </th>
+
+								</tr>
+							</tbody>
+						</table>
+			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+</body>
+
+<script type="text/javascript">function myConfirm() {
+	  var result = confirm("Want to delete?");
+	  if (result) {
+	   return true;
+	  } else {
+	   return false;
+	  }
+	}
+	
+	</script>
+	
+<style>
+	th, td {
+  padding: 15px;
+  text-align: left;
+  
+}
+tr:hover {background-color: ##a4e4e9;}
+</style>
+</html>

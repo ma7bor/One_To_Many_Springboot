@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/flaticon.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/animate.css"/>
+    <title>Client List</title>
+</head>
+<body>
+
+<!-- Page info section -->
+	<section class="page-info-section set-bg" data-setbg="img/page-info-bg/2.jpg">
+		<div class="container">
+			<h2>Client List</h2>
+		</div>
+	</section>
+
+
+
+
+
+						<table>
+							<theader>
+								<tr >
+									<th >ID</th>
+									<th >CARD NUM</th>
+									<th >FIRST NAME</th>
+									<th >LAST NAME</th>
+									<th >EMAIL</th>
+									
+								</tr>
+							</theader>
+						
+
+
+
+						
+							<tbody>
+								<tr :block th:each="rabat:${persona}" >
+									<td  th:text="${rabat.id}" ></td>
+									<td  th:text="${rabat.cin}"></td>
+									<td  th:text="${rabat.nom}" ></td>
+									<td  th:text="${rabat.prenom}"></td>
+									<td  th:text="${rabat.email}"></td>
+									
+									<th><a th:href="@{/contrat/}+${rabat.id}+'/show'">Show Contrat</a></th>									
+									
+									<th><a  th:href="@{/contrat/add/}+${rabat.id}">Add Contract</a></th>
+									
+									<th ><a th:href="@{/deleteClient(id=${rabat.id})}" onclick="return myConfirm();" > Delete </a> </th>
+								</tr>
+							</tbody>
+						</table>
+			
+	
+
+
+
+
+
+</body>
+<script type="text/javascript">function myConfirm() {
+	  var result = confirm("Want to delete?");
+	  if (result) {
+	   return true;
+	  } else {
+	   return false;
+	  }
+	}
+	
+	</script>
+	<style>
+	th, td {
+  padding: 15px;
+  text-align: left;
+}
+tr:hover {background-color: #a4e4e9;}
+	
+	</style>
+
+</html>
+
+
+
+
+
+
+

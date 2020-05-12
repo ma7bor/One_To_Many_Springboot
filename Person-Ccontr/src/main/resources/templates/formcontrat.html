@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	
+	
+	<link rel="stylesheet" type="text/css"  th:html ="@{/css/util.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
+	<link rel="stylesheet" th:href="@{/font-awesome.min.css}"  />
+	<link rel="stylesheet" th:href="@{/css/flaticon.css}"  />
+	<link rel="stylesheet" th:href="@{/css/owl.carousel.css}"  />
+	<link rel="stylesheet" th:href="@{/css/style.css}"  />
+	<link rel="stylesheet" th:href="@{/css/animate.css}"  />
+
+</head>
+<body>
+
+                                                
+	<!-- Page info section -->
+	<section class="page-info-section set-bg" data-setbg="img/page-info-bg/2.jpg">
+		<div class="container">
+			<h2>Contract Information</h2>
+		</div>
+	</section>
+		
+	
+	
+	<!-- Page info section end -->
+	<div class="inputPatient ">
+<form action="/ajoutcontrat" th:object="${contrat}" method="post">
+
+		
+		
+		
+		
+
+		<input type="hidden" name="idperson" th:value="${idperson}" />
+			
+		<label for="1"> CONTRACT NUMBER </label>
+		<input type="number"  th:field="*{numcontrat}" placeholder="Num...." id="1" required/>
+		
+		
+		<label for="2"> REFERENCE </label>
+		<input type="text" th:field="*{ref}" id="2" placeholder="ref.contrat...." required/>
+		
+		
+		
+		
+		
+		
+		
+		<input type="submit" value="Submit"/>
+</form>
+</div>
+</body>
+
+</html>
+

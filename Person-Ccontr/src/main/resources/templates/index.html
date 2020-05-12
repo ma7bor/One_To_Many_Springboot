@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" type="text/css" href="css/util.css" >
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/flaticon.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/animate.css"/>
+    <title>Welcome Page</title>
+</head>
+<body>
+
+                                                
+	<!-- Page info section -->
+	<section class="page-info-section set-bg" data-setbg="img/page-info-bg/2.jpg">
+		<div class="container">
+			<h2>Client Information</h2>
+		</div>
+	</section>
+	
+	  <a href="/showlist" id="aa">Client List</a>
+	
+	
+	
+	<!-- Page info section end -->
+	<div class="inputPatient ">
+		<form action="/ajouterpersonne" th:object="${person}" method="post">
+				
+		<label for="1"> CARD NUMBER </label>
+		<input type="text"  th:field="*{cin}" placeholder="..........." id="1" required/>
+		<label for="2"> FIRST NAME </label>
+		<input type="text" th:field="*{nom}" id="2" placeholder="..........." required/>
+		<label for="3"> LAST NAME</label>
+		<input type="text" th:field="*{prenom}" id="3" placeholder="..........." required/>
+		<label th:text="${message}" style="color: red;"></label>
+		<label for="4"> EMAIL </label>
+		<input type="text" th:field="*{email}"  id="4" placeholder="..........." required/>
+		
+		<input type="submit" value="SUBMIT"/>
+		</form>
+	</div>
+
+
+</body>
+<style>
+#aa {
+  border: 2px solid blue;
+  margin: 7% 7% ; 
+  border-style:solid;
+  background-color:rgb(192, 229, 218
+}</style>
+</html>
