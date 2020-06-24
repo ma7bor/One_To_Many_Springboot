@@ -3,3 +3,5 @@ This project show how to implement One To Many relation using SpringBoot framewo
 
 
 Note 1 : You need to create a database with test1 name , check application properties file.
+
+![](screenshots/welcome%20page.png)
